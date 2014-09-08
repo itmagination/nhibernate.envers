@@ -34,7 +34,7 @@ namespace NHibernate.Envers.Configuration.Store
             {
                 var persistentClass = _nhibernateConfiguration.GetClassMapping(type);
                 if (persistentClass == null) continue;
-                foreach (var property in persistentClass.PropertyIterator)
+                foreach (var property in persistentClass.PropertyClosureIterator)
                 {
                     //is it a collection?
                     var collectionValue = property.Value as Mapping.Collection;

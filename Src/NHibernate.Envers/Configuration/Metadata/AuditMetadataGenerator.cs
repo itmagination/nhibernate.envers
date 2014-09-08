@@ -496,7 +496,7 @@ namespace NHibernate.Envers.Configuration.Metadata
 			// Mapping unjoined properties
 			var parent = xmlMappingData.ClassMapping;
 
-			addProperties(parent, pc.UnjoinedPropertyIterator,
+			addProperties(parent, pc.PropertyClosureIterator,
 					propertyMapper, auditingData, entityName, xmlMappingData, false);
 
 			// Mapping joins (second pass)

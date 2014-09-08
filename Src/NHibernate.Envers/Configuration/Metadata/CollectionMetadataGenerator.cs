@@ -356,7 +356,7 @@ namespace NHibernate.Envers.Configuration.Metadata
 				if (refPc != null)
 				{
 					idMatch = MappingTools.SameColumns(refPc.IdentifierProperty.ColumnIterator, indexedValue.Index.ColumnIterator);
-					foreach (var propertyRef in refPc.PropertyIterator)
+                    foreach (var propertyRef in refPc.PropertyClosureIterator)
 					{
 						if (MappingTools.SameColumns(propertyRef.ColumnIterator, indexedValue.Index.ColumnIterator))
 						{
@@ -683,7 +683,7 @@ namespace NHibernate.Envers.Configuration.Metadata
 
 		private static string searchMappedBy(PersistentClass referencedClass, Mapping.Collection collectionValue)
 		{
-			foreach (var property in referencedClass.PropertyIterator)
+            foreach (var property in referencedClass.PropertyClosureIterator)
 			{
 				//should probably not care if order is same...
 				if (property.Value.ColumnIterator.SequenceEqual(collectionValue.Key.ColumnIterator))
@@ -696,7 +696,7 @@ namespace NHibernate.Envers.Configuration.Metadata
 
 		private static string searchMappedBy(PersistentClass referencedClass, Table collectionTable)
 		{
-			foreach (var property in referencedClass.PropertyIterator)
+            foreach (var property in referencedClass.PropertyClosureIterator)
 			{
 				var propValueAsColl = property.Value as Mapping.Collection;
 				if (propValueAsColl != null)
