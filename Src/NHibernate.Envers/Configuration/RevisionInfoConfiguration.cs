@@ -251,7 +251,7 @@ namespace NHibernate.Envers.Configuration
 						}
 
 						var propertiesPlusIdentifier = new List<Property>();
-                        propertiesPlusIdentifier.AddRange(pc.PropertyClosureIterator);
+						propertiesPlusIdentifier.AddRange(pc.PropertyIterator);
 						propertiesPlusIdentifier.Add(pc.IdentifierProperty);
 						var persistentProperties = PropertyAndMemberInfo.PersistentInfo(clazz, propertiesPlusIdentifier);
 

@@ -21,7 +21,7 @@ namespace NHibernate.Envers.Configuration.Attributes
 			foreach (var persistentClass in nhConfiguration.ClassMappings)
 			{
 				addForEntity(persistentClass, ret);
-				addForComponent(persistentClass.PropertyClosureIterator, ret);
+				addForComponent(persistentClass.PropertyIterator, ret);
 			}
 			return ret;
 		}
@@ -42,7 +42,7 @@ namespace NHibernate.Envers.Configuration.Attributes
 			var typ = persistentClass.MappedClass;
 			fillClass(typ, dicToFill);
 			var props = new List<Property>();
-			props.AddRange(persistentClass.PropertyClosureIterator);
+			props.AddRange(persistentClass.PropertyIterator);
 			if (persistentClass.IdentifierProperty != null && !persistentClass.IdentifierProperty.IsComposite)
 				props.Add(persistentClass.IdentifierProperty);
 

@@ -112,7 +112,7 @@ namespace NHibernate.Envers.Configuration.Metadata.Reader
 			public PersistentClassPropertiesSource(System.Type typ, AnnotationsMetadataReader parent) 
 			{ 
 				this.parent = parent;
-				DeclaredPersistentProperties = PropertyAndMemberInfo.PersistentInfo(typ, parent.pc.PropertyClosureIterator, true);
+				DeclaredPersistentProperties = PropertyAndMemberInfo.PersistentInfo(typ, parent.pc.PropertyIterator, true);
 				Class = typ;
 			}
 
