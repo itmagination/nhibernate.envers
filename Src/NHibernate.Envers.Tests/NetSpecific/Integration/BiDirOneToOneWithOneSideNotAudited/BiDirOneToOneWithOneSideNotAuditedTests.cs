@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace NHibernate.Envers.Tests.NetSpecific.Integration.BiDirOneToOneWithOneSideNotAudited
 {
-    //[Ignore("Not yet fixed - NHE-150")]
+    // NHE-150
     public class BiDirOneToOneWithOneSideNotAuditedTests : TestBase
     {
         public BiDirOneToOneWithOneSideNotAuditedTests(string strategyType)
