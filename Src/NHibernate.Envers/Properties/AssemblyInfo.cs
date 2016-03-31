@@ -30,5 +30,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.7000")] //ITM specific version is achieved by add 7000 to revision
-[assembly: AssemblyFileVersion("1.0.0.7000")] //ITM specific version is achieved by add 7000 to revision
+[assembly: AssemblyVersion("1.0.0.7001")] //ITM specific version is achieved by add 7000 to revision
+[assembly: AssemblyFileVersion("1.0.0.7001")] //ITM specific version is achieved by add 7000 to revision
