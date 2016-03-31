@@ -104,6 +104,9 @@
     <Compile Include="Integration\Inheritance\Single\Bug\BugTest.cs" />
     <Compile Include="Integration\ManyToMany\UniDirectional\M2MIndexedListNotAuditedTargetTest.cs" />
     <Compile Include="Integration\Strategy\IdentifierReuseTest.cs" />
+    <Compile Include="NetSpecific\Integration\BiDirOneToOneWithOneSideNotAudited\BiDirOneToOneWithOneSideNotAuditedTests.cs" />
+    <Compile Include="NetSpecific\Integration\BiDirOneToOneWithOneSideNotAudited\Child.cs" />
+    <Compile Include="NetSpecific\Integration\BiDirOneToOneWithOneSideNotAudited\Parent.cs" />
     <Compile Include="NetSpecific\Integration\Component\BaseClassComponent.cs" />
     <Compile Include="NetSpecific\Integration\Component\BaseClassOwner.cs" />
     <Compile Include="NetSpecific\Integration\Component\DerivedClassComponent.cs" />
@@ -764,6 +767,7 @@
     <Compile Include="ValidityTestBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="NetSpecific\Integration\BiDirOneToOneWithOneSideNotAudited\Mapping.hbm.xml" />
     <EmbeddedResource Include="NetSpecific\Integration\NotFoundIgnore\BaseType\Mapping.hbm.xml" />
     <EmbeddedResource Include="NetSpecific\UnitTests\CustomLists\Mapping.hbm.xml" />
     <EmbeddedResource Include="NetSpecific\Entities\List.hbm.xml" />
