@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+    assembly="NHibernate.Envers.Tests"
+    namespace="NHibernate.Envers.Tests.Integration.Inheritance.Entities">
+
+    <class xmlns="urn:nhibernate-mapping-2.2" name="NHibernate.Envers.Tests.Integration.Inheritance.Single.Bug.ParentBase" table="ParentBases">
+        <id name="Id">
+            <column name="Id" check="Id &gt; 0" />
+            <generator class="assigned" />
+        </id>
+        <discriminator type="String">
+            <column name="discriminator" />
+        </discriminator>
+        <set inverse="false" name="Children" >
+            <key foreign-key="FK_Child_ParentBase">
+                <column name="ParentBase_id" />
+            </key>
+            <one-to-many class="NHibernate.Envers.Tests.Integration.Inheritance.Single.Bug.Child" />
+        </set>
+        <subclass name="NHibernate.Envers.Tests.Integration.Inheritance.Single.Bug.ParentDerived" discriminator-value="1">
+        </subclass>
+    </class>
+
+    <class xmlns="urn:nhibernate-mapping-2.2" name="NHibernate.Envers.Tests.Integration.Inheritance.Single.Bug.Child" table="Childs">
+        <id name="Id">
+            <column name="Id" check="Id &gt; 0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one class="NHibernate.Envers.Tests.Integration.Inheritance.Single.Bug.ParentBase" foreign-key="FK_Child_ParentBase0" name="ParentBase">
+            <column name="ParentBase_id" index="IX_FK_ParentBase" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
